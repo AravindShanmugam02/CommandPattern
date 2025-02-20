@@ -24,17 +24,17 @@ int main()
 
 	if (choice == 1)
 	{
-		CopyCommand copyCommandGiven = CopyCommand(r);
-		copyCommandGiven.Execute();
+		CommandBase* copyCommandGiven = new CopyCommand(r); //Note: You cannot create an object of an abstract class like CommandBase copyCommandGiven, but you can create a pointer to an abstract class like CommandBase* copyCommandGiven;
+		copyCommandGiven->Execute();
 	}
 	else if (choice == 2)
 	{
-		CutCommand cutCommandGiven = CutCommand(r);
-		cutCommandGiven.Execute();
+		CommandBase* cutCommandGiven = new CutCommand(r);
+		cutCommandGiven->Execute();
 	}
 	else if (choice == 3)
 	{
-		PasteCommand pasteCommandGiven = PasteCommand(r);
-		pasteCommandGiven.Execute();
+		CommandBase* pasteCommandGiven = new PasteCommand(r);
+		pasteCommandGiven->Execute();
 	}
 }

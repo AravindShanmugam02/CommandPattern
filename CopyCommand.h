@@ -15,6 +15,8 @@ class CopyCommand : public CommandBase
 {
 public:
 	CopyCommand(Receiver& receiver) { _receiver = &receiver; }
+	//~CopyCommand(){}
+	// Even if we didn't give one destructor, the compiler will create one by default.
 
 	void Execute() override;
 	void Undo() override;
