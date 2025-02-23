@@ -1,6 +1,13 @@
 // Abstract class
 #pragma once
 
+enum class Commands
+{
+	COPY,
+	CUT,
+	PASTE
+};
+
 class CommandBase
 {
 public:
@@ -12,4 +19,5 @@ public:
 	virtual void Execute() = 0;
 	virtual void Undo() = 0;
 	virtual void Redo() = 0;
+	virtual Commands GetCommand() = 0;
 };

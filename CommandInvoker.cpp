@@ -110,3 +110,28 @@ void CommandInvoker::RedoCommand()
 		}
 	}
 }
+
+void CommandInvoker::ListCommands()
+{
+	std::cout << "\n List of Commands:" << std::endl;
+
+	std::string suffixString = "";
+
+	for (int i = 0; i < commandDeque.size(); i++)
+	{
+		if (i == redoCounter - 1 && redoCounter != -1) // redoCounter - 1 because when doing redo action, the counter increases by one in the logic.
+		{
+			suffixString = " ..... Action Redone";
+		}
+		else if (i >= undoCounter && undoCounter != -1) // >= because all the action that was undone should be suffixed.
+		{
+			suffixString = " ..... Action Undone";
+		}
+		else
+		{
+			suffixString = "";
+		}
+
+		std::cout << commandIdentifier[(int)commandDeque[i]->GetCommand()] << suffixString << std::endl;
+	}
+}

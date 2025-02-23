@@ -50,7 +50,7 @@ int main()
 		}
 		else if (choice == 6)
 		{
-
+			cI->ListCommands();
 		}
 
 		std::cin >> choice;

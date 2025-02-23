@@ -18,10 +18,13 @@ public:
 	//~CopyCommand(){}
 	// Even if we didn't give one destructor, the compiler will create one by default.
 
+	Commands GetCommand() override { return command; }
+
 	void Execute() override;
 	void Undo() override;
 	void Redo() override;
 
 private:
 	Receiver* _receiver;
+	Commands command = Commands::COPY;
 };

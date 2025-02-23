@@ -15,6 +15,7 @@ public:
 	void AddCommandToQueue(CommandBase& newCommand);
 	void UndoCommand();
 	void RedoCommand();
+	void ListCommands();
 private:
 	void InvokeCommand();
 
@@ -32,4 +33,7 @@ private:
 
 	bool undone = false;
 	bool redone = false;
+	
+	// just for debugging purpose to bring this to screen.
+	const std::string commandIdentifier[3] = { "COPY", "CUT", "PASTE" };
 };
