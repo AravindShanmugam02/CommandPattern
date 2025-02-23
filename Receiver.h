@@ -7,6 +7,7 @@
 
 #pragma once
 #include <iostream>
+#include <string>
 
 class Receiver
 {
@@ -15,4 +16,6 @@ public:
 	void Copy();
 	void Cut();
 	void Paste();
+	void Undo(std::string command);
+	void Redo(std::string command);
 };

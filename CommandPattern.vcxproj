@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CommandInvoker.cpp" />
     <ClCompile Include="CopyCommand.cpp" />
     <ClCompile Include="CutCommand.cpp" />
     <ClCompile Include="main.cpp" />

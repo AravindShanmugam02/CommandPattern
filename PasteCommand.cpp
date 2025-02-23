@@ -8,10 +8,11 @@ void PasteCommand::Execute()
 
 void PasteCommand::Undo()
 {
-
+	// Basically we clear the recent pasted entry from the screen.
+	_receiver->Undo("PASTE");
 }
 
 void PasteCommand::Redo()
 {
-
+	_receiver->Redo("PASTE");
 }

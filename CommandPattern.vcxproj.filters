@@ -34,6 +34,9 @@
     <Filter Include="Source Files\Concrete Files">
       <UniqueIdentifier>{ab82dd41-63a9-4621-826c-78b36308c4d8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Invoker Files">
+      <UniqueIdentifier>{00c8c6db-7635-4b50-a37c-8746e8ce1a6f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Receiver.cpp">
@@ -50,6 +53,9 @@
     </ClCompile>
     <ClCompile Include="CopyCommand.cpp">
       <Filter>Source Files\Concrete Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandInvoker.cpp">
+      <Filter>Source Files\Invoker Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
