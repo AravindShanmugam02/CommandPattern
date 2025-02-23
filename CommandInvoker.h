@@ -29,5 +29,5 @@ private:
 	int iteratorCounter = -1;
 
 	bool undone = false;
-	bool reDid = false;
+	bool redone = false;
 };

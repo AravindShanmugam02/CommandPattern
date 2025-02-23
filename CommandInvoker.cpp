@@ -2,6 +2,19 @@
 
 void CommandInvoker::AddCommandToQueue(CommandBase& newCommand)
 {
+	if (undone)
+	{
+		undone = false;
+		// Clear the remaining commands that are present after the iteratorCounter position from the deque.
+		commandDeque.resize(iteratorCounter);
+		commandDeque.shrink_to_fit(); // This function requests that the memory usage is adapted to the current size of the container, but the request is non-binding, and the container implementation is free to optimize its memory usage otherwise.
+		iteratorCounter = -1; // reset iteratorCounter.
+	}
+	else if (redone)
+	{
+
+	}
+	// Add this new command.
 	commandDeque.push_back(&newCommand);
 	_onCommand = &newCommand;
 	InvokeCommand();
@@ -19,7 +32,7 @@ void CommandInvoker::UndoCommand()
 	{
 		if (iteratorCounter == -1)
 		{
-			// nothing undone and nothing redone, so undo last recent command.
+			// Nothing undone and nothing redone, so undo last recent command.
 			commandDeque[commandDeque.size() - 1]->Undo();
 			iteratorCounter = commandDeque.size() - 1;
 		}
