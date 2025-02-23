@@ -25,8 +25,10 @@ private:
 	//Switched from Queue to Deque because queue is FIFO.
 	std::deque<CommandBase*> commandDeque;
 
-	// iteratorCounter contains the index of element which was last accessed to perform either undo or redo action. Resets to -1, if nothing applicable.
-	int iteratorCounter = -1;
+	// undoCounter contains the index of element which was last accessed to perform undo action. Resets to -1, if nothing applicable.
+	int undoCounter = -1;
+	// redoCounter contains the index of element which was last accessed to perform redo action. Resets to -1, if nothing applicable.
+	int redoCounter = -1;
 
 	bool undone = false;
 	bool redone = false;

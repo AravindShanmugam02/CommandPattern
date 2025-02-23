@@ -20,7 +20,7 @@ int main()
 	CommandInvoker* cI = new CommandInvoker();
 
 	std::cout << "Let's Begin" << std::endl;
-	std::cout << "Enter a command to perform:" << "\n 1. Copy" << "\n 2. Cut" << "\n 3. Paste" << "\n 4. Undo" << "\n 5. Redo" << "\n 0. Exit" << std::endl;
+	std::cout << "Enter a command to perform:" << "\n 1. Copy" << "\n 2. Cut" << "\n 3. Paste" << "\n 4. Undo" << "\n 5. Redo" << "\n 6. List of commands stored" << "\n 0. Exit" << std::endl;
 	int choice = 0;
 
 	do
@@ -45,6 +45,10 @@ int main()
 			cI->UndoCommand();
 		}
 		else if (choice == 5)
+		{
+			cI->RedoCommand();
+		}
+		else if (choice == 6)
 		{
 
 		}
